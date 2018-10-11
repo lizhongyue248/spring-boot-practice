@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/homework?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password:
+  output:
+    ansi:
+      enabled: always
+  jpa:
+#    显示数据库查询语句
+    show-sql: true
+#    DDL
+    hibernate:
+       ddl-auto: update
+  redis:
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+

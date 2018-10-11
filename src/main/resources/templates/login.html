@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common::_header('主页')">
+</head>
+<body class="text-center login">
+<div class="container">
+    <form class="form-login" action="#" th:action="@{/login}" th:object="${user}" method="post">
+        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
+        <div class="row web-input">
+            <label for="account" class="sr-only">Account</label>
+            <input id="account" th:field="*{username}" class="form-control" placeholder="Account" required="" autofocus=""
+                   type="text" minlength="4" maxlength="18">
+        </div>
+        <div class="row web-input">
+            <label for="password" class="sr-only">Password</label>
+            <input id="password" th:field="*{password}" class="form-control" placeholder="Password" required=""
+                   type="password" minlength="4" maxlength="18">
+        </div>
+        <div class="row web-input">
+            <input id="captcha" name="captcha" class="form-control col-sm-5" placeholder="Captcha" required=""
+                   type="text" minlength="4" maxlength="4">
+            <img id="captcha-img" class="col-sm-7" src="captcha" alt="captcha">
+        </div>
+        <div class="alert alert-danger" role="alert" th:unless="${#strings.isEmpty(msg)}">
+            <strong th:text="${msg}">Oh snap!</strong>
+        </div>
+        <div class="row web-input">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            <a class="btn btn-lg btn-info btn-block" type="button" th:href="@{/register}">register</a>
+        </div>
+        <p class="mt-5 mb-3 text-muted">© 2017-2018 By:<a href="https://www.echocow.cn">EchoCow</a></p>
+    </form>
+</div>
+<div th:include="common/common::_footer"></div>
+<script>
+    $("#captcha-img").click(function () {
+        $(this).attr("src", "captcha?" + Math.random());
+    });
+</script>
+</body>
+</html>

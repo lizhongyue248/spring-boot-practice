@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/common::_header('主页')">
+</head>
+<body>
+<div class="container web-hide">
+    <div class="jumbotron">
+        <h1 class="display-3">Hello, world!</h1>
+        <p class="lead">Welcome to Student Manager System</p>
+        <hr class="m-y-md">
+
+        <div class="alert alert-danger" role="alert" th:unless="${#strings.isEmpty(msg)}">
+            <strong th:text="${msg}">Oh snap!</strong>
+        </div>
+        <!--未登录-->
+        <div th:if="${user == null}">
+            <p>Now, you have two chooses.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" th:href="@{/login}">Login</a>
+                <a class="btn btn-info btn-lg" th:href="@{/register}">Register</a>
+            </p>
+        </div>
+        <div th:if="${user != null}">
+            <h2 class="page-header" id="web-title">Students Manager</h2>
+            <span class="text-right"><a href="#" class="btn btn-primary" id="add">Add</a></span>
+            <span class="text-right"><a href="#" class="btn btn-danger" id="delete">Delete Select</a></span>
+            <span class="text-right"><a href="#" class="btn btn-warning" id="exit">Exit</a></span>
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                <tr class="thead-inverse">
+                    <th>#</th>
+                    <th>Student No</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Birthday</th>
+                    <th>Addr</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--
+                iterStat:
+                    count: 计数 从1开始
+                    index: 索引 从0开始
+                    size:  列表总条数
+                    even/odd: 偶数／奇数
+                    first/last: 第一条／最后一条
+                -->
+                <tr th:each="student,iterStat:${page.content}" th:data-id="${student.id}">
+                    <td th:text="${iterStat.count}">1</td>
+                    <td th:text="${student.stuNo}">Student No</td>
+                    <td th:text="${student.name}">Name</td>
+                    <td th:text="${student.phone}">Phone</td>
+                    <td th:text="${student.birthday}">Birthday</td>
+                    <td th:text="${student.addr}">Addr</td>
+                    <td>
+                        <a href="#" th:data-id="${student.id}" class="btn btn-success update web-btn-margin">Update</a>&nbsp;
+                        <a href="#" th:data-id="${student.id}"
+                           class="btn btn-info save web-hide web-btn-margin">Save</a>&nbsp;
+                        <a href="#" th:data-id="${student.id}" class="btn btn-danger delete web-btn-margin">Delete</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <nav>
+                <ul class="pagination pagination-sm justify-content-center">
+                    <li th:unless="${page.first}">
+                        <a href="#" th:href="@{/(page=0)}">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li th:unless="${page.first}">
+                        <a href="#" aria-label="Previous" th:href="@{/(page=${page.number} - 1)}">
+                            <span aria-hidden="true">&lt;</span>
+                        </a>
+                    </li>
+
+
+                    <li th:each="i : ${#numbers.sequence(1,page.totalPages)}">
+                        <a href="#" th:class="${page.number + 1 == i}?active : none" th:href="@{/(page=${i} - 1)}" th:text="${i}"></a>
+                    </li>
+
+                    <li th:unless="${page.last}">
+                        <a href="#" aria-label="Next" th:href="@{/(page=${page.number} + 1)}">
+                            <span aria-hidden="true">&gt;</span>
+                            <!--<span aria-hidden="true">&raquo;</span>-->
+                        </a>
+                    </li>
+                    <li th:unless="${page.last}">
+                        <a href="#" aria-label="Last" th:href="@{/(page=${page.totalPages} - 1)}">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    <p class="justify-content-center mt-5 mb-3 text-muted" style="text-align: center;"> © 2017-2018 By: <a href="https://www.echocow.cn">EchoCow</a></p>
+    </div>
+</div>
+
+
+<div th:include="common/common::_footer"></div>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>

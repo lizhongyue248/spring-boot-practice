@@ -1,0 +1,137 @@
+.form-login {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.login {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+}
+
+.web-btn-padding {
+    padding: .5rem;
+}
+
+.web-btn-margin {
+    margin: .5rem;
+}
+
+.web-hide {
+    display: none;
+}
+
+.web-add input {
+    margin: .5rem;
+}
+
+.pager {
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+.c-indicator, .label, .pager {
+    text-align: center;
+}
+
+.pager li {
+    display: inline;
+}
+
+.pager li > a, .pager li > span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
+
+.pager li > a:hover {
+
+    background-color: #dee2e6;
+
+}
+
+.pagination {
+    height: 40px;
+    margin: 20px 0;
+}
+
+.pagination ul {
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.pagination li {
+    display: inline;
+}
+
+.pagination a, .pagination span {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-image: none;
+    border-left-width: 0;
+    float: left;
+    line-height: 38px;
+    padding: 0 14px;
+    text-decoration: none;
+}
+
+.pagination a:hover, .pagination .active a, .pagination .active span {
+    background-color: #F5F5F5;
+}
+
+.pagination .active a, .pagination .active span {
+    color: #999999;
+    cursor: default;
+}
+
+.pagination .disabled span, .pagination .disabled a, .pagination .disabled a:hover {
+    background-color: transparent;
+    color: #999999;
+    cursor: default;
+}
+
+.pagination li:first-child a, .pagination li:first-child span {
+    border-left-width: 1px;
+    border-radius: 3px 0 0 3px;
+}
+
+.pagination li:last-child a, .pagination li:last-child span {
+    border-radius: 0 3px 3px 0;
+}
+
+.pagination-centered {
+    text-align: center;
+}
+
+.pagination-right {
+    text-align: right;
+}
+
+.active{
+    background-color: #dde0e3;
+    color: grey;
+}
+
+.web-input{
+    padding: .5rem 1.3rem;
+}
