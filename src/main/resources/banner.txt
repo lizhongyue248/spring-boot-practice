@@ -1,0 +1,15 @@
+
+${AnsiColor.BRIGHT_RED}        ███████╗ ██████╗██╗  ██╗ ██████╗    ${AnsiColor.BLUE}      ██████╗ ██████╗ ██╗    ██╗
+${AnsiColor.BRIGHT_RED}        ██╔════╝██╔════╝██║  ██║██╔═══██╗   ${AnsiColor.BLUE}     ██╔════╝██╔═══██╗██║    ██║
+${AnsiColor.BRIGHT_RED}        █████╗  ██║     ███████║██║   ██║   ${AnsiColor.BLUE}     ██║     ██║   ██║██║ █╗ ██║
+${AnsiColor.BRIGHT_RED}        ██╔══╝  ██║     ██╔══██║██║   ██║   ${AnsiColor.BLUE}     ██║     ██║   ██║██║███╗██║
+${AnsiColor.BRIGHT_RED}        ███████╗╚██████╗██║  ██║╚██████╔╝   ${AnsiColor.BLUE}     ╚██████╗╚██████╔╝╚███╔███╔╝
+${AnsiColor.BRIGHT_RED}        ╚══════╝ ╚═════╝╚═╝  ╚═╝ ╚═════╝    ${AnsiColor.BLUE}      ╚═════╝ ╚═════╝  ╚══╝╚══╝
+
+${AnsiColor.BRIGHT_YELLOW}::  ❦❦❦❦❦  :: Running Sping Boot ${spring-boot.version}  :: ❦❦❦❦❦  ::
+
+${AnsiColor.BRIGHT_YELLOW}+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+${AnsiBackground.BRIGHT_MAGENTA} ${AnsiColor.BLUE} Welcome, hello world!
+${AnsiBackground.BRIGHT_MAGENTA} ${AnsiColor.BLUE} Author: Echo Cow
+${AnsiColor.BRIGHT_YELLOW}+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
